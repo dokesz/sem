@@ -16,12 +16,5 @@ int main(){
     }
     }else
         cout << "sikertelen nyitas";
-    /*while(getline (reading, text)){
-        string* words = new string;
-        
-        //cout << text;
-    }*/
-
-    //cout << "Valami" << endl;
     return 0;
 }
