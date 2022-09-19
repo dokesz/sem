@@ -4,13 +4,23 @@
 using namespace std;
 
 int main(){
-    string text;
+    string* text=new string;
     ifstream reading("szotar.txt");
-    while(getline (reading, text)){
+    if(reading.is_open()){
+        for(int i=0; i != reading.eof(); i++){
+            getline(reading, text[i]);
+        }
+    reading.close();
+    for (int i = 0; i < text->size(); i++){
+        cout << text[i];
+    }
+    }else
+        cout << "sikertelen nyitas";
+    /*while(getline (reading, text)){
         string* words = new string;
         
         //cout << text;
-    }
+    }*/
 
     //cout << "Valami" << endl;
     return 0;
