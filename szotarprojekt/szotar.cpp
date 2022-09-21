@@ -4,7 +4,9 @@
 int main()
 {
     ifstream f("szotar.txt");
-    read_db(&f);
+    int u = read_db(&f);
+    ifstream ff("szotar.txt");
+    read_file(&ff, u);
     f.close();
     /*ifstream reading("szotar.txt");
     string *sorok = new string[db];

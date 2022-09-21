@@ -19,3 +19,20 @@ int read_db(ifstream *pf)
     }
     return line;
 }
+
+void read_file(ifstream *pf, int size)
+{
+    string *words = new string[size];
+    if (pf->is_open())
+    {
+        for (int i = 0; i < size; i++)
+        {
+            getline(*pf, words[i]);
+        }
+        cout << "------------------------" << endl;
+        for (int i = 0; i < size; i++)
+        {
+            cout << words[i] << endl;
+        }
+    }
+}
