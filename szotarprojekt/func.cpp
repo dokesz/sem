@@ -2,7 +2,6 @@
 
 int read_db(ifstream *pf)
 {
-    cout << "Eddig eljutott";
     int line = 0;
     string text;
     // string* text = new string[MAX];
