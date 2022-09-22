@@ -35,4 +35,4 @@ void read_file(ifstream *pf, int size)
             cout << words[i] << endl;
         }
     }
-}
+}  
