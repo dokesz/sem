@@ -4,17 +4,13 @@ int read_db(ifstream *pf)
 {
     int line = 0;
     string text;
-    // string* text = new string[MAX];
     if (pf->is_open())
     {
         while (!pf->eof())
         {
             getline(*pf, text);
             line++;
-            // cout << "beolvasva";
         }
-        // pf->close();
-        cout << line << endl;
     }
     return line;
 }
@@ -34,4 +30,28 @@ void read_file(ifstream *pf, int size)
             cout << words[i] << endl;
         }
     }
-}  
+}
+
+void write_file(ofstream *out_f)
+{
+    out_f->open("szotar.txt", ofstream::out | ofstream::app);
+    string input = "stay";
+    char text[100];
+    //ofstream outfile("valami2.txt");
+    while (input == "stay")
+    {
+        if (out_f->is_open())
+        {
+            cout << "Adjon meg szavakat, hasznaljon '-' a szavak "
+                    "elvalasztasahoz: ";
+            cin.getline(text, 100);
+
+            // write inputted data into the file.
+            *out_f << text << endl;
+            // asking for more words
+            cout << "Akarod folytatni a szavak bevitelet? (exit-re kilep, stay-re marad)"
+                 << endl;
+            cin >> input;
+        }
+    }
+}
